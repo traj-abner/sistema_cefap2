@@ -1,0 +1,510 @@
+sistema_cefap
+v0.32
+19/02/13 - Abner
+#descrição
+Correção de Bugs
+
+#changelog
+- Link para edição de agenda de facility
+- Implementar fullcalendar em edição de agenda de facility
+- correção dos bugs
+- gravação incorreta do campo "tipo_agendamento" na tabela "facilities". Usar a constante definida para tal, e não a string 
+- editar agendamento: data agendada não está sendo pré-populada 
+- definir action padrão para todos os controllers (redirecionar para "listar")
+- erros de digitação/acentuação nos headers de listar projetos 
+- mostrar status das facilities em "facilities_listar"
+- título errado no listar projetos
+- validar se número da página requisitada existe antes de continuar o processamento.
+- faltando mostrar o total de registros sendo mostrados, em relação ao total, em todos os "listar" ("Mostrando usuários 1 ao 19, de um total de 230").
+- faltando popular o número da página atual no seletor de pag. 
+- padronizar marcação HTML, seguindo o padrão usado em adicionar usuário, listar agendamentos, novo agendamento
+
+#known issues
+- Views mensagens_recebidas, mensagens_enviadas, creditos_lancamentos e creditos_extrato com erro
+- dashboards incorretos. Não batem com os wireframes
+- não entendi a diferença entre "aprovar" e "editar" agendamento? Aprovar não contém o mesmo código que Editar?
+- faltando filtros com select box em listar agendamentos, etc.
+- width dos colunas está pequeno quando aparecem as setas de ordenação, ocorrendo quebra de linha quando não deveria
+- css: centralizar nos arquivos .css. Deixar blocos <style> somente quando for algo muito específico para a página sendo editada
+- MVC não seguida no controller Main, etc.
+- breadcrumbs incorretos. Editar breadcrumbs.php para corrigir nomes sendo exibidos.
+
+#todo
+- correção dos bugs
+- corrigir formatos de campos em todas as tabelas do banco de dados. Em "usuarios", por exemplo, está tudo como varchar(45).
+- implementar @TODOs citados no código
+- Em facilities_listar:
+	- acrescentar "com marcados" em facilities_listar
+	- recuperar qtde de exibições por página ao redirecionar. Este dado está sendo perdido ???
+
+
+================================================================================
+================================================================================
+
+v0.31
+18/02/13 - Abner
+#descrição
+Agendamentos
+
+#changelog
+Implementação de edição de agenda de facilities
+
+#known issues
+- Drop-down menu de cor diferente da barra de menu.
+- gravação incorreta do campo "tipo_agendamento" na tabela "facilities". Usar a constante definida para tal, e não a string
+- dashboards incorretos. Não batem com os wireframes
+- editar agendamento: data agendada não está sendo pré-populada
+- definir action padrão para todos os controllers (redirecionar para "listar")
+- não entendi a diferença entre "aprovar" e "editar" agendamento? Aprovar não contém o mesmo código que Editar?
+- faltando filtros com select box em listar agendamentos, etc.
+- faltando mostrar o total de registros sendo mostrados, em relação ao total, em todos os "listar" ("Mostrando usuários 1 ao 19, de um total de 230").
+- width dos colunas está pequeno quando aparecem as setas de ordenação, ocorrendo quebra de linha quando não deveria
+- faltando popular o número da página atual no seletor de pag.
+- validar se número da página requisitada existe antes de continuar o processamento.
+- título errado no listar projetos
+- erros de digitação/acentuação nos headers de listar projetos
+- css: centralizar nos arquivos .css. Deixar blocos <style> somente quando for algo muito específico para a página sendo editada
+- MVC não seguida no controller Main, etc.
+- breadcrumbs incorretos. Editar breadcrumbs.php para corrigir nomes sendo exibidos.
+
+#todo
+- Link para edição de agenda de facility
+- Implementar fullcalendar em edição de agenda de facility
+- correção dos bugs
+- corrigir formatos de campos em todas as tabelas do banco de dados. Em "usuarios", por exemplo, está tudo como varchar(45).
+- implementar @TODOs citados no código
+- padronizar marcação HTML, seguindo o padrão usado em adicionar usuário, listar agendamentos, novo agendamento
+- Em facilities_listar:
+	- acrescentar "com marcados" em facilities_listar
+	- mostrar status das facilities em "facilities_listar"
+	- recuperar qtde de exibições por página ao redirecionar. Este dado está sendo perdido
+
+
+================================================================================
+================================================================================
+v0.30 18/02/13 - Francisco
+
+DESCRIÇÃO
+- Aperfeiçoamentos de layout, sobretudo em adicionar usuário, listar agendamentos, novo agendamento
+- Correção de vários bugs e diagnóstico de outros ainda pendentes (abaixo)
+- Utilizado style.less para edição dos estilos e fornecido o compilador SimpLESS (pasta DEVELOPMENT) para gerar o arquivo style.css após edição de style.less, sempre que necessário
+- Implementadas rotinas de validação dinâmica em adicionar usuário, com validação do CPF e outras. Implementadas máscaras de campos em adicionar usuário.
+
+BUGS
+- vários links apontando para endereços relativos do tipo "../usuarios/adicionar", que se tornam incorretos quando o URL contém mais segmentos. CORRIGIDO
+- views/dashboard.php, linha 188, faltou "php" na abertura da tag. CORRIGIDO
+- login não está restringindo usuários que não confirmaram inscrição. CORRIGIDO
+- na construção do menu, deve-se exibir somente as facilities ativas. CORRIGIDO
+- faltando mostrar o saldo na topbar, se usuário comum. CORRIGIDO
+- relacionamento de usuarios com agendamentos com erro em "usuarios.php", "other_field". CORRIGIDO
+- gravação incorreta do campo "tipo_agendamento" na tabela "facilities". Usar a constante definida para tal, e não a string
+- dashboards incorretos. Não batem com os wireframes
+- editar agendamento: data agendada não está sendo pré-populada
+- definir action padrão para todos os controllers (redirecionar para "listar")
+- não entendi a diferença entre "aprovar" e "editar" agendamento? Aprovar não contém o mesmo código que Editar?
+- faltando filtros com select box em listar agendamentos, etc.
+- faltando mostrar o total de registros sendo mostrados, em relação ao total, em todos os "listar" ("Mostrando usuários 1 ao 19, de um total de 230").
+- width dos colunas está pequeno quando aparecem as setas de ordenação, ocorrendo quebra de linha quando não deveria
+- faltando popular o número da página atual no seletor de pag.
+- validar se número da página requisitada existe antes de continuar o processamento.
+- título errado no listar projetos
+- erros de digitação/acentuação nos headers de listar projetos
+- css: centralizar nos arquivos .css. Deixar blocos <style> somente quando for algo muito específico para a página sendo editada
+- MVC não seguida no controller Main, etc.
+- breadcrumbs incorretos. Editar breadcrumbs.php para corrigir nomes sendo exibidos.
+
+
+TODOs
+- correção dos bugs
+- corrigir formatos de campos em todas as tabelas do banco de dados. Em "usuarios", por exemplo, está tudo como varchar(45).
+- implementar @TODOs citados no código
+- padronizar marcação HTML, seguindo o padrão usado em adicionar usuário, listar agendamentos, novo agendamento
+- Em facilities_listar:
+	- acrescentar "com marcados" em facilities_listar
+	- mostrar status das facilities em "facilities_listar"
+	- recuperar qtde de exibições por página ao redirecionar. Este dado está sendo perdido
+
+
+PARA V2.0
+- módulo FORMULÁRIOS
+- módulo RELATÓRIOS
+- módulo LOGS
+
+================================================================================
+================================================================================
+v0.28
+15/02/13 - Abner
+#descrição
+Dashboard, Ajuda, Header
+
+#changelog
+Implementação de Ajuda (ver e editar)
+Implementação de Dashboard
+Implementação básica do menu superior (pendente atualização pelo designer)
+
+#known issues
+Gráficos do Dashboard
+
+#todo
+
+
+================================================================================
+================================================================================
+v0.27
+14/02/13 - Abner
+#descrição
+Header
+
+#changelog
+Correções de Bugs em agendamentos_editar, facilities, facilities_editar, agendamentos, creditos, creditos_listar, projetos.
+Criação de views agendamentos_calendario, projetos_listar_meus.
+Implementação do menu.
+
+#known issues
+
+
+#todo
+
+
+================================================================================
+================================================================================
+
+v0.26
+13/02/13 - Abner
+#descrição
+Módulo Agendamento | Módulo Facilities
+
+#changelog
+Correções de Bugs na aprovação de Agendamentos
+Implementadas edição e visualização do agendamento
+Implementados extratos html e pdf das facilities
+
+#known issues
+
+
+#todo
+
+
+================================================================================
+================================================================================
+
+v0.25
+07/02/13 - Abner
+#descrição
+Módulo Agendamento
+
+#changelog
+Implementados controllers e views para criação, aprovação e listagem de agendamentos
+
+#known issues
+
+
+#todo
+
+
+================================================================================
+================================================================================
+
+v0.23
+04/02/13 - Abner
+#descrição
+Módulo Projetos
+
+#changelog
+Implementados controllers e views para criação e edição; controller para exclusão
+Correções de Bugs Módulo Créditos
+
+#known issues
+Não subindo arquivo na edição
+
+#todo
+
+
+================================================================================
+================================================================================
+
+v0.22
+31/01/13 - Abner
+#descrição
+Módulo Mensagens | Módulo Creditos
+
+#changelog
+Implementação de lista de enviados
+Implementação de Inserção de Créditos
+
+#known issues
+Não listando apenas relacionados
+
+#todo
+Inserção direta por Superadmins
+
+================================================================================
+================================================================================
+
+v0.21
+30/01/13 - Abner
+#descrição
+Módulo Mensagens | Módulo Creditos
+
+#changelog
+Alteração na integração com o BD (Mensagens)
+Implementação de renderização de Boleto
+
+#known issues
+Não listando apenas relacionados
+
+#todo
+View mensagens_enviadas
+creditos_inserir
+
+================================================================================
+================================================================================
+
+v0.20
+29/01/13 - Abner
+#descrição
+Módulo Mensagens
+
+#changelog
+Implementação de lista
+Implementação de escrita (enviar/encaminha)
+Correção no envio de emails
+Funções de marcação (Lido/Não Lido/Excluido)
+
+#known issues
+Não listando apenas relacionados
+
+#todo
+View mensagens_enviadas
+
+================================================================================
+================================================================================
+
+v0.19
+28/01/13 - Abner
+#descrição
+Alterações módulo Créditos/Início módulo Mensagens
+
+#changelog
+Implementação de ações com marcados (créditos)
+Lista de lançamentos ao visualizar dados do usuário
+Criado formulario e ação de envio de mensagem
+
+#known issues
+não enviando email para todos os destinatarios
+
+#todo
+
+
+================================================================================
+================================================================================
+
+v0.18
+24/01/13 - Abner
+#descrição
+Alterações módulo Créditos
+
+#changelog
+Implementada lista de lançamentos para o superadmin, incluindo alterações no status (ativo, inativo, cancelado) e lista de lançamentos cancelados
+
+#known issues
+
+
+#todo
+ações com marcados
+
+================================================================================
+================================================================================
+v0.17
+23/01/13 - Abner
+#descrição
+Alterações módulo Créditos
+
+#changelog
+Implementada lista de lançamentos (extrato) por usuário
+
+#known issues
+
+
+#todo
+
+================================================================================
+================================================================================
+v0.16
+22/01/13 - Abner
+#descrição
+Alterações módulo Créditos
+
+#changelog
+Correções na lista de boletos
+Implementadas ações para seleção multipla
+Iniciada lista de creditos->usuario
+
+#known issues
+BUG: ações com marcados
+
+
+#todo
+
+
+================================================================================
+================================================================================
+v0.15
+21/01/13 - Abner
+#descrição
+Implementada lista de boletos
+
+#changelog
+Criação da view e controller listar
+Implementadas funções de marcação: em aberto, vencido, cancelado, pago
+Criação de constantes para definição de símbolo de moeda corrente
+
+#known issues
+Há 2 campos com valor. Confirmar qual deve ser exibido na lista
+Confirmar qual tipo de exibição de moeda corrente: ISO4217 ou Local
+
+
+#todo
+ações com marcados
+
+================================================================================
+================================================================================
+v0.14
+18/01/13 - Abner
+#descrição
+Correções de interação com Banco de Dados
+
+#changelog
+Correções em usuario.php e facility.php
+Implementado gerenciamento de administradores de facilities
+Adicionado campo de alteração de status em facilities/editar/
+
+#known issues
+
+
+
+#todo
+Upload de arquivos
+Implementar calendário
+
+================================================================================
+================================================================================
+
+v0.13
+17/01/13 - Abner
+#descrição
+Correções na lista de facilities
+
+#changelog
+Correção na criação e edição de facilities
+Inclusão de opção de excluir facility (superadmin apenas)
+Alteração de queries para padrão DataMapper
+Correção de fluxo de dados  formulario de cadastro de facilities -> action incluir
+
+#known issues
+
+
+
+#todo
+Upload de arquivos
+Salvar relação facility <=> usuário no cadastro da facility
+
+================================================================================
+================================================================================
+v0.12
+16/01/13 - Abner
+#descrição
+Correções na lista de facilities
+
+#changelog
+Implementada navegação de página por botões na lista de usuários
+Implementada seleção de ordenação
+Implementada visualização de administradores
+Correção de BUG: query não retornava primeiro resultado
+
+#known issues
+
+
+
+#todo
+Terminar formatação da visualização de administradores
+
+================================================================================
+================================================================================
+
+v0.11
+15/01/13 - Abner
+#descrição
+Correção na lista de usuários
+
+#changelog
+Implementada navegação de página por botões na lista de usuários
+
+#known issues
+Evento de seleção não reinicia select box
+
+
+#todo
+corrigir evento de seleção das select boxes
+
+================================================================================
+================================================================================
+
+v0.10
+03/01/13 - Thais
+#descrição
+Criada todas as views do módulo facilities
+
+#changelog
+Implementada a action de listar facilities(ainda falta alguns ajustes)
+Implementada a action de editar facilities(ainda falta alguns ajustes)
+Implementada a action de adicionar facilities(ainda falta alguns ajustes)
+modal para ver facilities já implementado
+modal para ver extrato das facilities já implementado
+
+#known issues
+jquery de selecionar arquivo ainda não está igual ao do wireframe.
+Falta correções de bugs de css em todas as views do módulo facilitites
+
+
+#todo
+ultimas configurações do jQuery da página de adicionar facilities
+alterar_status
+ver (exibir os resultados obtidos do banco de dados)
+excluir
+extrato (exibir os resultados obtidos do banco de dados)
+extrato_pdf
+editar_agenda
+
+================================================================================
+================================================================================
+
+v0.9
+02/01/13 - Thais
+#descrição
+Configurações iniciais do módulo facilities.
+Últimos ajustes na dashboard.
+
+#changelog
+Atualização dos itens exibidos para o usuário na dashboard de acordo com a credencial do usuário logado
+Iniciada a codificação do módulo facilitites.
+Jquery para seleção de usuários administrativos associados a esta facility - OK
+
+
+#known issues
+jquery para adicionar os arquivos ainda não está funcionando
+view Adicionar ainda não concluída (muitos bugs de css)
+
+#todo
+implementações jQuery
+salvar facilities no banco de dados
+listar facilities
+editar facilities
+alterar_status
+ver
+excluir
+extrato
+extrato_pdf
+editar_agenda
+
+================================================================================
